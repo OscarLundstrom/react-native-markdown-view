@@ -33,12 +33,12 @@ function renderImage(node: ImageNode, output: OutputFunction, state: RenderState
     const {imageWrapper: wrapperStyle, image: imageStyle} = styles;
     Image.getSize(node.target, (width, height) => setAspectRatio(width/height));
     return (
-      <View key={state.key} style={node.width || node.height ? [wrapperStyle, paddedSize(node, wrapperStyle)] : wrapperStyle}>
+      <View style={node.width || node.height ? [wrapperStyle, paddedSize(node, wrapperStyle)] : wrapperStyle}>
         <Image source={{uri: node.target}} style={{aspectRatio, ...imageStyle}} content=""/>
       </View>
     )
   }
-  return <ImageComponent/>
+  return <ImageComponent key={state.key}/>
 }
 
 function renderTableCell(cell, row, column, rowCount, columnCount, output, state, styles) {
