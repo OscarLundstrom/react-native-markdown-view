@@ -96,6 +96,10 @@ declare module "react-native-markdown-view" {
          * string (first and only argument).
          */
         onLinkPress?: (url: string) => void;
+        /**
+         * String to be rendered as markdown.
+         */
+        children?: string
     }
 
     /**
